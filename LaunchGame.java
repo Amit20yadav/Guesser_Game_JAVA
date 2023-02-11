@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 class Guesser
 {
-    int guessNum;
+    int guessNum; //This variable  store the guessed number.
+
+    // This method will ask the guesser to enter the number which players have to be guessed, and returns it to the UMPIRE 
 
     public int guessingNumber()
     {
@@ -19,6 +21,8 @@ class Player
 {
     int guessNum;
 
+    //This method will ask player to enter their guessed number, and returned the guess num to the umpire.
+
     public int guessingNumber()
     {
         Scanner scan=new Scanner(System.in);
@@ -27,13 +31,14 @@ class Player
         return guessNum;
     }
 }
+/* The class umpire contains the guessed number, by the guesser and players  */
 
 class Umpire
 {
-    int numFromGuesser;
-    int numFromPlayer1;
-    int numFromPlayer2;
-    int numFromPlayer3;
+    int numFromGuesser; //stores the guesser number
+    int numFromPlayer1; //stores the Player1 number
+    int numFromPlayer2;//stores the Player2 number
+    int numFromPlayer3;//stores the Player3 number
 
 
 public void collectNumFromGuesser()
@@ -41,6 +46,7 @@ public void collectNumFromGuesser()
     Guesser g=new Guesser();
     numFromGuesser=g.guessingNumber();
 }
+/* This method collect nums from all the 3 players and stores in new variable as written below variables */
 public void collectNumFromPlayers()
 {
     Player p1=new Player();
@@ -51,6 +57,7 @@ public void collectNumFromPlayers()
     numFromPlayer2=p2.guessingNumber();
     numFromPlayer3=p3.guessingNumber();
 }
+/* This method compare the guessed value and player value */
 public void compare()
 {
     if(numFromGuesser==numFromPlayer1)
